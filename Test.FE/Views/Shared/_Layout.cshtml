@@ -1,0 +1,132 @@
+﻿<!doctype html>
+<html lang="en" dir="ltr" ng-app="TEST">
+<head>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C4XMM69EHY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-FPF1JHRBQW');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Language" content="en" />
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#4188c9">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <!-- Generated: 2018-04-16 09:29:05 +0200 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext">
+
+    <!-- DataTables -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" />
+
+    <!-- Select2 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.8.5/css/selectize.default.css">
+
+    <!-- Dashboard Core -->
+    <link href="~/Content/css/dashboard.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link href="~/Content/css/custom.css?r=@DateTime.UtcNow" rel="stylesheet" />
+</head>
+<body class="">
+
+    <div class="loader-tenk" ng-show="spinnerShow">
+        <img src="~/Content/images/Double Ring-1.3s-200px.svg" class="loader-tenk" height="150" />
+    </div>
+
+    <div class="page">
+        <div class="page-main">
+            <div class="header collapse d-lg-flex p-0" id="headerMenuCollapse">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg order-lg-first">
+                            <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
+                                <li class="nav-item">
+                                    <a href="~/page/Variant" ng-class="pageId == 1 ? 'nav-link active' : 'nav-link'"><i class="fe fe-target"></i> Variant</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="~/page/Influenza" ng-class="pageId == 2 ? 'nav-link active' : 'nav-link'"><i class="fe fe-feather"></i> Influenza</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="~/page/Therapeutic" ng-class="pageId == 3 ? 'nav-link active' : 'nav-link'"><i class="fe fe-pocket"></i> Therapeutic</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="~/page/Government" ng-class="pageId == 4 ? 'nav-link active' : 'nav-link'"><i class="fe fe-link"></i> Government</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="~/page/NYT" ng-class="pageId == 5 ? 'nav-link active' : 'nav-link'"><i class="fe fe-info"></i> NYT</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="~/page/Vaccine" ng-class="pageId == 6 ? 'nav-link active' : 'nav-link'"><i class="fe fe-shield"></i> Vaccine</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @RenderBody()
+        </div>
+    </div>
+
+    <div class="modal fade" id="announcer" tabindex="-1" role="dialog" aria-labelledby="set" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">{{msgTitle}}</h5>
+                </div>
+                <div class="modal-body">
+                    {{msgBody}}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Content/js/vendors/jquery-3.2.1.min.js"></script>
+    <script src="~/Content/js/vendors/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/js/vendors/jquery.sparkline.min.js"></script>
+    <script src="~/Content/js/vendors/selectize.min.js"></script>
+    <script src="~/Content/js/vendors/jquery.tablesorter.min.js"></script>
+    <script src="~/Content/js/vendors/jquery-jvectormap-2.0.3.min.js"></script>
+    <script src="~/Content/js/vendors/jquery-jvectormap-de-merc.js"></script>
+    <script src="~/Content/js/vendors/jquery-jvectormap-world-mill.js"></script>
+    <script src="~/Content/js/vendors/circle-progress.min.js"></script>
+    <script src="~/Content/js/core.js"></script>
+
+    <!-- DataTables -->
+    <script type='text/javascript' src='https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js'></script>
+    <script type='text/javascript' src='https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js'></script>
+
+    <!-- AngularJS & Related files -->
+    <script type='text/javascript' src="~/Content/ng/js/angular.min.js"></script>
+    <script type='text/javascript' src="~/Content/ng/js/angular-sanitize.js"></script>
+    <script type='text/javascript' src="~/Content/ng/js/angular-cookies.js"></script>
+    <script type='text/javascript' src='~/Content/ng/js/angular-base64-upload.min.js'></script>
+    <script type='text/javascript' src='~/Content/ng/js/ng-google-chart.js'></script>
+    <script type='text/javascript' src="~/Content/ng/js/ui-bootstrap-tpls-3.0.6.min.js"></script>
+    <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/angular-datatables/0.6.2/angular-datatables.min.js"></script>
+    <script type='text/javascript' src='~/Content/lib/tinymce/js/tinymce/tinymce.min.js'></script>
+    <script type='text/javascript' src='~/Content/ng/js/tinymce.min.js'></script>
+    <script src="http://www.google.com/jsapi?ext.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&language=en"></script>
+
+    <!-- Core -->
+    <script type='text/javascript' src='~/Core/app.js?r=@DateTime.UtcNow'></script>
+    <script type='text/javascript' src='~/Core/test.js?r=@DateTime.UtcNow'></script>
+</body>
+</html>
