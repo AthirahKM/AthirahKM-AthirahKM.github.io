@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "Therapeutic";
+}
+
+<div ng-init="pageId = 3;"></div>
+<div class="container" ng-controller="TestController" ng-init="getTherapeutic()">
+    <div class="page-header">
+        <div class="form-row mb-2">
+            <h1 id="titlehead" class="page-title">
+                Therapeutic
+            </h1>
+        </div>
+        <br />
+    </div>
+    <div class="page">
+        <div class="page-wrapper">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="">
+                                <div class="table-responsive">
+                                    <table datatable="ng" class="table card-table table-striped table-bordered table-vcenter text-nowrap">
+                                        <thead>
+                                            <tr>
+                                                <th class="w-1">#</th>
+                                                <th>Phase</th>
+                                                <th>Number of Candidates</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="item in TherapeuticList2">
+                                                <td>
+                                                    <span class="text-muted">{{$index + 1}}</span>
+                                                </td>
+                                                <td>{{item.phase}}</td>
+                                                <td>{{item.candidates}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

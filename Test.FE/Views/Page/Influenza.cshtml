@@ -1,0 +1,149 @@
+﻿
+@{
+    ViewBag.Title = "Influenza";
+    //Layout = "~/Views/Shared/_LayoutBlank.cshtml";
+}
+
+<div ng-init="pageId = 2;"></div>
+<div class="container" ng-controller="TestController" ng-init="getInfluenzaILINet();getInfluenzaUSCL();getInfluenzaUSPHL()">
+    <div class="page-header">
+        <div class="form-row mb-2">
+            <h1 id="titlehead" class="page-title">
+                Influenza
+            </h1>
+        </div>
+        <br />
+    </div>
+
+    <!--Influenza Like Illness-->
+    <div id="influenzaili" class="card table-responsive">
+        <div class="card-header" data-toggle="collapse" data-target="#ili">
+            <h3 class="card-title">Influenza-like-illness</h3>
+            <a class="icon p-2" href=""><i class="fa fa-chevron-down"></i></a>
+        </div>
+        <div class="collapse" id="ili">
+            <div class="card-body">
+                <div class="">
+                    <div class="table-responsive">
+                        <table datatable="ng" class="table card-table table-striped table-bordered table-vcenter text-nowrap">
+                            <thead>
+                                <tr>
+                                    <th class="w-1">#</th>
+                                    <th>Week</th>
+                                    <th>Age 0-4</th>
+                                    <th>Age 5-24</th>
+                                    <th>Age 25-49</th>
+                                    <th>Age 50-64</th>
+                                    <th>Age 64+</th>
+                                    <th>Total ILI</th>
+                                    <th>Total Patients</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in InfluenzaILINetList2">
+                                    <td><span class="text-muted">{{$index + 1}}</span></td>
+                                    <td>{{item.week}}</td>
+                                    <td>{{item['age 0-4']}}</td>
+                                    <td>{{item['age 5-24']}}</td>
+                                    <td>{{item['age 25-49']}}</td>
+                                    <td>{{item['age 50-64']}}</td>
+                                    <td>{{item['age 64+']}}</td>
+                                    <td>{{item.totalILI}}</td>
+                                    <td>{{item.totalPatients}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Influenza US Clinical Lab-->
+    <div id="influenzauscl" class="card table-responsive">
+        <div class="card-header" data-toggle="collapse" data-target="#uscl">
+            <h3 class="card-title">Influenza data by US Clinical Lab</h3>
+            <a class="icon p-2" href=""><i class="fa fa-chevron-down"></i></a>
+        </div>
+        <div class="collapse" id="uscl">
+            <div class="card-body">
+                <div class="">
+                    <div class="table-responsive">
+                        <table datatable="ng" class="table card-table table-striped table-bordered table-vcenter text-nowrap">
+                            <thead>
+                                <tr>
+                                    <th class="w-1">#</th>
+                                    <th>Week</th>
+                                    <th>Total Test</th>
+                                    <th>Total A</th>
+                                    <th>Total B</th>
+                                    <th>Positive (%)</th>
+                                    <th>Positive A (%)</th>
+                                    <th>Positive B (%)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in InfluenzaUSCLList2">
+                                    <td><span class="text-muted">{{$index + 1}}</span></td>
+                                    <td>{{item.week}}</td>
+                                    <td>{{item.totalTests}}</td>
+                                    <td>{{item.totalA}}</td>
+                                    <td>{{item.totalB}}</td>
+                                    <td>{{item.percentPositive}}</td>
+                                    <td>{{item.percentPositiveA}}</td>
+                                    <td>{{item.percentPositiveB}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Influenza US Public Health Lab-->
+    <div id="influenzausphl" class="card table-responsive">
+        <div class="card-header" data-toggle="collapse" data-target="#usphl">
+            <h3 class="card-title">Influenza by US Public Health Lab</h3>
+            <a class="icon p-2" href=""><i class="fa fa-chevron-down"></i></a>
+        </div>
+        <div class="collapse" id="usphl">
+            <div class="card-body">
+                <div class="">
+                    <div class="table-responsive">
+                        <table datatable="ng" class="table card-table table-striped table-bordered table-vcenter text-nowrap">
+                            <thead>
+                                <tr>
+                                    <th class="w-1">#</th>
+                                    <th>Week</th>
+                                    <th>Total Test</th>
+                                    <th>H3N2v</th>
+                                    <th>H1N1</th>
+                                    <th>H3</th>
+                                    <th>B</th>
+                                    <th>BVIC</th>
+                                    <th>BYAM</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in InfluenzaUSPHLList2">
+                                    <td><span class="text-muted">{{$index + 1}}</span></td>
+                                    <td>{{item.week}}</td>
+                                    <td>{{item.totalTests}}</td>
+                                    <td>{{item['A(H3N2v)']}}</td>
+                                    <td>{{item['A(H1N1)']}}</td>
+                                    <td>{{item['A(H3)']}}</td>
+                                    <td>{{item.B}}</td>
+                                    <td>{{item.BVIC}}</td>
+                                    <td>{{item.BYAM}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,100 @@
+﻿
+@{
+    ViewBag.Title = "Government";
+}
+
+<div ng-init="pageId = 4;"></div>
+<div class="container" ng-controller="TestController" ng-init="getGovCountries();getGovListByCountries();">
+    <div class="page-header">
+        <div class="form-row mb-2">
+            <h1 id="titlehead" class="page-title">
+                Government - Austria
+            </h1>
+        </div>
+        <br />
+    </div>
+
+    <div class="page">
+        <div class="page-wrapper">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <form>
+                                <div class="mt-3 mb-3">
+                                    <div class="row">
+                                        <div class="card-title">
+                                            <h3>Cases by District</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="card-body">
+                            <div class="">
+                                <div class="table-responsive">
+                                    <table datatable="ng" class="table card-table table-striped table-bordered table-vcenter text-nowrap">
+                                        <thead>
+                                            <tr>
+                                                <th class="w-1">#</th>
+                                                <th>5-14</th>
+                                                <th>15-24</th>
+                                                <th>25-34</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="a in GovAustriaCasesDistrict">
+                                                <td>
+                                                    <span class="text-muted">{{$index + 1}}</span>
+                                                </td>
+                                                <td>{{a.district}}</td>
+                                                <td>{{a.population}}</td>
+                                                <td>{{a.cases}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="row row-deck row-cards">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                Percentage New Cases & Death by Sex
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <div id="chart-development-activity" style="height: 250px;">
+                                <div google-chart chart="CasesBySexChart" style="width: auto; margin: 0 auto !important;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="row row-deck row-cards">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                By Province
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <div id="chart-development-activity" style="height: 250px;">
+                                <div google-chart chart="AustriaProvinceChart" style="width: auto; margin: 0 auto !important;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

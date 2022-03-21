@@ -1,0 +1,64 @@
+﻿
+<div ng-init="pageId = 6;"></div>
+<div class="container" ng-controller="TestController" ng-init="getVaccine();getCountryVaccineCoverage()">
+    <div class="page-header">
+        <div class="form-row mb-2">
+            <h1 id="titlehead" class="page-title">
+                Vaccine
+            </h1>
+        </div>
+        <br />
+    </div>
+    <div class="page">
+        <div class="page-wrapper">
+            <div class="row">
+                <div class="col-12">
+                    <div class="row row-deck row-cards">
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">{{VaccineData.totalCandidates}} Total Candidates</h3>
+                                </div>
+                                <table class="table card-table table-vcenter">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Phase</th>
+                                            <th>Candidate</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="item in VaccineList">
+                                            <td>
+                                                <span class="text-muted">{{$index + 1}}</span>
+                                            </td>
+                                            <td>{{item.phase}}</td>
+                                            <td>{{item.candidates}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-8">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Vaccine</h3>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table card-table table-vcenter">
+                                        <tbody>
+                                            <tr ng-repeat="item in VaccineDataList | limitTo : 5">
+                                                <td>{{item.sponsors.toString()}}</td>
+                                                <td>{{item.mechanism}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
